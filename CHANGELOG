@@ -1,0 +1,14 @@
+nose_extra_tools 1.0.1 (January 6, 2017)
+========================================
+
+Bugfixes
+--------
+
+    * Removed distribute_setup.py as 'Distribute' is a now deprecated fork of
+      the 'Setuptools' project.
+
+
+nose_extra_tools 1.0.0 (August 19, 2013)
+========================================
+
+    * Initial release.
