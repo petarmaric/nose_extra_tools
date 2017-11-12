@@ -10,31 +10,31 @@ __all__ = ['issues_warnings',]
 def issues_warnings(*warnings):
     """
     Test must issue one of expected warnings to pass.
-    
+
     Based on `nose.tools.raises`.
-    
+
     Example use::
-    
+
       @issues_warnings(UserWarning, DeprecationWarning)
       def test_issues_deprecation_warning():
           import warnings
           warnings.warn('This test passes')
-    
+
       @issues_warnings(Warning)
       def test_that_fails_by_passing():
           pass
     """
     valid = ' or '.join([w.__name__ for w in warnings])
-    
+
     def decorate(func):
         name = func.__name__
-        
+
         def newfunc(*arg, **kw):
             with warnings_mod.catch_warnings(record=True) as issued_warnings:
                 warnings_mod.simplefilter('always')
-                
+
                 func(*arg, **kw)
-                
+
                 interesting = [
                     w for w in issued_warnings
                     if issubclass(w.category, warnings)
@@ -42,10 +42,10 @@ def issues_warnings(*warnings):
                 if not interesting:
                     message = "%s() did not issue %s" % (name, valid)
                     raise AssertionError(message)
-        
+
         newfunc = make_decorator(func)(newfunc)
         return newfunc
-    
+
     return decorate
 
 
@@ -59,7 +59,7 @@ import sys
 
 
 # Python 2.7 introduced new assert* methods in `unittest.TestCase`, fallback to
-# backported library if Python < 2.7 
+# backported library if Python < 2.7
 if sys.version_info < (2, 7):
     import unittest2 as unittest #@UnusedImport @UnresolvedImport
 else:
@@ -73,7 +73,7 @@ def pep8(name):
 
 class Dummy(unittest.TestCase):
     maxDiff = None # Show the entire diff in failure messages
-    
+
     def nop(self):
         pass
 _t = Dummy('nop')
