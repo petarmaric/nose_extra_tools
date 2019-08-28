@@ -1,7 +1,7 @@
 About
 =====
 
-Extra testing goodies for ``nose.tools``. 
+Extra testing goodies for ``nose.tools``.
 
 Adds an ``issues_warnings`` decorator, where tests must issue one of the
 expected warnings to pass (similar to ``nose.tools.raises`` for exceptions).
@@ -12,18 +12,18 @@ fashion, so ``assert_equal`` rather than ``assertEqual``):
 
     * ``assert_greater`` / ``assert_less`` / ``assert_greater_equal`` /
       ``assert_less_equal``
-      
+
     * ``assert_regexp_matches`` / ``assert_not_regexp_matches``
-    
+
     * ``assert_in`` / ``assert_not_in``
-    
+
     * ``assert_is`` / ``assert_is_not``
-    
+
     * ``assert_is_none`` / ``assert_is_not_none``
-    
+
     * ``assert_dict_contains_subset``
-    
-    * and `more...`_. 
+
+    * and `more...`_.
 
 .. _`more...`: http://docs.python.org/2.7/whatsnew/2.7.html#updated-module-unittest
 
@@ -42,16 +42,16 @@ Usage examples
 ::
 
     from nose_extra_tools import assert_in, issues_warnings
-    
+
     @issues_warnings(UserWarning, DeprecationWarning)
     def test_issues_deprecation_warning():
         import warnings
         warnings.warn('This test passes')
-    
+
     @issues_warnings(Warning)
     def test_forgot_to_issue_warning():
         pass
-    
+
     def test_backported_assert_in():
         assert_in(10, range(5))
 
@@ -59,11 +59,11 @@ Usage examples
 Contribute
 ==========
 
-If you find any bugs, or wish to propose new features `please let me know`_. 
+If you find any bugs, or wish to propose new features `please let me know`_.
 
 If you'd like to contribute, simply fork `the repository`_, commit your changes
 and send a pull request. Make sure you add yourself to `AUTHORS`_.
 
-.. _`please let me know`: https://bitbucket.org/petar/nose_extra_tools/issues/new
-.. _`the repository`: http://bitbucket.org/petar/nose_extra_tools
-.. _`AUTHORS`: https://bitbucket.org/petar/nose_extra_tools/src/default/AUTHORS
+.. _`please let me know`: https://github.com/petarmaric/nose_extra_tools/issues/new
+.. _`the repository`: https://github.com/petarmaric/nose_extra_tools
+.. _`AUTHORS`: https://github.com/petarmaric/nose_extra_tools/blob/master/AUTHORS
