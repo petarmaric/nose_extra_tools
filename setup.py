@@ -16,7 +16,7 @@ setup(
     author='Petar Maric',
     author_email='petarmaric@uns.ac.rs',
     description='Extra testing goodies for nose.tools',
-    long_description=open('README').read(),
+    long_description=open('README.rst').read(),
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
