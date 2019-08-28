@@ -2,7 +2,7 @@ from nose.tools import make_decorator
 import warnings as warnings_mod
 
 
-__version__ = '1.0.1'
+__version__ = '1.0.2'
 
 __all__ = ['issues_warnings',]
 

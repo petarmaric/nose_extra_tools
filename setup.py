@@ -10,7 +10,7 @@ if sys.version_info < (2, 6):
 
 setup(
     name='nose_extra_tools',
-    version='1.0.1',
+    version='1.0.2',
     url='https://github.com/petarmaric/nose_extra_tools',
     license='BSD',
     author='Petar Maric',
