@@ -4,3 +4,4 @@
 dist/
 build/
 nose_extra_tools.egg-info/
+.vscode/
