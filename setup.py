@@ -4,7 +4,7 @@ from requirements_utils import parse_requirements
 
 
 if sys.version_info < (2, 6):
-    print 'ERROR: nose_extra_tools requires at least Python 2.6 to run.'
+    print ('ERROR: nose_extra_tools requires at least Python 2.6 to run.')
     sys.exit(1)
 
 
